@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.module_name = "GoogleMapsUtils"
   
-  s.dependency 'GoogleMaps'	  s.dependency 'GoogleMaps'
+  s.dependency 'GoogleMaps'
   s.static_framework = true
 
   s.subspec 'QuadTree' do |sp|
