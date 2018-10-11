@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Google-Maps-iOS-Utils"
-  s.version      = "2.1.0"
+  s.version      = "2.2.0"
   s.summary      = "A utilities library for use with Google Maps SDK for iOS."
   s.description  = <<-DESC
                    This library contains classes that are useful for a wide range of applications
@@ -16,8 +16,10 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/googlemaps/google-maps-ios-utils.git",
                      :tag => "v#{s.version.to_s}" }
   s.requires_arc = true
-  s.dependency 'GoogleMaps'
-  s.compiler_flags = '-fno-modules'
+  s.module_name = "GoogleMapsUtils"
+  
+  s.dependency 'GoogleMaps'	  s.dependency 'GoogleMaps'
+  s.static_framework = true
 
   s.subspec 'QuadTree' do |sp|
     sp.source_files = 'src/QuadTree/**/*.{h,m}'
