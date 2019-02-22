@@ -48,17 +48,19 @@ static const double kGMUClusterWaitIntervalSeconds = 0.2;
     _algorithm = algorithm;
     _renderer = renderer;
 
-    [_mapView addObserver:self
-               forKeyPath:kGMUCameraKeyPath
-                  options:NSKeyValueObservingOptionNew
-                  context:nil];
+      //need call from viewDidAppear in view that contains MAP
+//    [_mapView addObserver:self
+//               forKeyPath:kGMUCameraKeyPath
+//                  options:NSKeyValueObservingOptionNew
+//                  context:nil];
   }
 
   return self;
 }
 
 - (void)dealloc {
-  [_mapView removeObserver:self forKeyPath:kGMUCameraKeyPath];
+    //need call from viewDidDisppear in view that contains MAP
+  //[_mapView removeObserver:self forKeyPath:kGMUCameraKeyPath];
 }
 
 - (void)setDelegate:(id<GMUClusterManagerDelegate>)delegate
